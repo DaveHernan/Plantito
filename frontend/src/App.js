@@ -32,30 +32,32 @@ function App() {
     <BrowserRouter>
       <div className="grid-container">
         <header className="header">
-          <div className="brand">
-            <button onClick={openMenu}>&#9776;</button>
-            <Link to="/"><img className="head-logo" src="/images/plant-logo.jpg"></img> </Link>
-          </div>
-     
-          <div className="header-links">
-          <Link to="/cart">Cart</Link>
-            {userInfo ? (
-              <Link to="/profile">{userInfo.name}</Link>
-            ) : (
-              <Link to="/signin">Sign In</Link>
-            )}
-            {userInfo && userInfo.isAdmin && (
-              <div className="dropdown">
-                <a href="#">Admin</a>
-                <ul className="dropdown-content">
-                  <li>
-                    <Link to="/orders">Orders</Link>
-                    <Link to="/products">Products</Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
+                <div className="brand-button">
+                  <button onClick={openMenu}>&#9776;</button>
+                  </div>
+                  <div className="brand">
+                  <Link to="/"><img className="head-logo" src="/images/plant-logo.jpg"></img> </Link>
+                </div>
+          
+                <div className="header-links">
+                <Link to="/cart">Cart</Link>
+                  {userInfo ? (
+                    <Link to="/profile">{userInfo.name}</Link>
+                  ) : (
+                    <Link to="/signin">Sign In</Link>
+                  )}
+                  {userInfo && userInfo.isAdmin && (
+                    <div className="dropdown">
+                      <a href="#">Admin</a>
+                      <ul className="dropdown-content">
+                        <li>
+                          <Link to="/orders">Orders</Link>
+                          <Link to="/products">Products</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
         </header>
        
 
